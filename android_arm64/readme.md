@@ -1,4 +1,4 @@
-# Android Arm64 #
+# Android #
 I have the binary setup and ready to go.
 
 Download the app called Termux to be able to access a terminal on your device. *ROOT IS NOT NEEDED*.
@@ -34,7 +34,7 @@ You should be able to connect to your android device through Putty.
 termux-chroot
 apt install git --assume-yes
 git clone https://github.com/NanoBytesInc/miners.git
-cd ~/miners/android_arm64/
+cd ~/miners/android/
 nano xmr.conf
 ```
 
@@ -45,6 +45,10 @@ Edit "xmr.conf" to reflect your pool, thread count, and username.
 ~~~
 
 Always kill the program with `pkill miner`. Though, even in those first few minutes when it says "nan" for your hash rate, it is still working fine.
+
+
+
+
 
 # Pool I use
 Because Android CPU's are not a particularly powerful, most pools will not work very well with such low-power devices, however I find that MinerGate works quite well!
@@ -66,9 +70,16 @@ Give the program ~60 seconds to get all of your threads working. After about a m
 [Pixel 2 XL Hashing Speeds](https://i.imgur.com/KiRqLDw.png)
 
 #### Zenpad 3S 10 (MediaTek MT8176, 6 Cores)
-* 1 Thread: ~9 H/S
+* 1 Thread: ~9 H/S 
 * 2 Threads: ~22 H/S **(Most Efficient)**
 * 4 Threads: ~22 H/S
 * 6 Threads: ~28 H/S **(Highest Speed)**
+
+[Zenpad 3S 10 Hashing Speeds](https://i.imgur.com/EH5pfg1.png)
+
+#### Nexus Player (Intel Atom Z3560, 4 Cores)
+* 1 Thread: ~9 H/S **(Most Efficient)**
+* 2 Threads: ~22 H/S
+* 4 Threads: ~28 H/S **(Highest Speed)**
 
 [Zenpad 3S 10 Hashing Speeds](https://i.imgur.com/EH5pfg1.png)

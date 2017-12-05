@@ -1,4 +1,4 @@
-# Android Arm64 #
+# Android x86 #
 I have the binary setup and ready to go.
 
 Download the app called Termux to be able to access a terminal on your device. *ROOT IS NOT NEEDED*.
@@ -34,7 +34,7 @@ You should be able to connect to your android device through Putty.
 termux-chroot
 apt install git --assume-yes
 git clone https://github.com/NanoBytesInc/miners.git
-cd ~/miners/android_arm64/
+cd ~/miners/android_x86/
 nano xmr.conf
 ```
 
@@ -55,20 +55,7 @@ stratum+tcp://xmr.pool.minergate.com:45560
 # Expected Hashrate
 Give the program ~60 seconds to get all of your threads working. After about a minute the reporting will be accurate on the console. (Before this you may get results "nanH/s"). Everything is working properly during this time, the logging is just a little finicky.
 
-#### Pixel 2XL (Snapdragon 835, 8 Cores)
-* 1 Thread: ~28 H/S **(Most Efficient)**
-* 2 Threads: ~22 H/S
-* 3 Threads: ~26 H/S
-* 4 Threads: ~30 H/S
-* 6 Threads: ~40 H/S
-* 8 Threads: ~44 H/S **(Highest Speed)**
-
-[Pixel 2 XL Hashing Speeds](https://i.imgur.com/KiRqLDw.png)
-
-#### Zenpad 3S 10 (MediaTek MT8176, 6 Cores)
-* 1 Thread: ~9 H/S
-* 2 Threads: ~22 H/S **(Most Efficient)**
-* 4 Threads: ~22 H/S
-* 6 Threads: ~28 H/S **(Highest Speed)**
-
-[Zenpad 3S 10 Hashing Speeds](https://i.imgur.com/EH5pfg1.png)
+#### Nexus Player (Intel Atom Z3560, 4 Cores)
+* 1 Thread: ~... H/S **(Most Efficient)**
+* 2 Threads: ~... H/S
+* 4 Threads: ~... H/S **(Highest Speed)**
