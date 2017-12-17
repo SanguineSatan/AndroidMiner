@@ -108,6 +108,8 @@ chmod 600 ~/.ssh/authorized_keys
 sshd
 ~~~
 
+Now you should be able to SSH into your device. Do this. It will make this much less tedious for you :D
+
 ## Installing GCC
 Termux does not come with GCC, and we need it, so lets install it
 
