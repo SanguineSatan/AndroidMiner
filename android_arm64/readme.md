@@ -34,7 +34,7 @@ You should be able to connect to your android device through Putty.
 termux-chroot
 apt install git --assume-yes
 git clone https://github.com/NanoBytesInc/miners.git
-cd ~/miners/android/
+cd ~/miners/android_x64/
 nano xmr.conf
 ```
 
@@ -44,17 +44,11 @@ Edit "xmr.conf" to reflect your pool, thread count, and username.
 ./miner xmr.conf
 ~~~
 
-Always kill the program with `pkill miner`. Though, even in those first few minutes when it says "nan" for your hash rate, it is still working fine.
-
-
-
-
-
 # Pool I use
-Because Android CPU's are not a particularly powerful, most pools will not work very well with such low-power devices, however I find that MinerGate works quite well!
+Because Android CPU's are not a particularly powerful, most pools will not work very well with such low-power devices, try to use pools that provide a difficulty of less than 2,500.
 
-URL:
-stratum+tcp://xmr.pool.minergate.com:45560
+Here is a good one to check out
+https://moneroocean.stream
 
 # Expected Hashrate
 Give the program ~60 seconds to get all of your threads working. After about a minute the reporting will be accurate on the console. (Before this you may get results "nanH/s"). Everything is working properly during this time, the logging is just a little finicky.
@@ -74,13 +68,6 @@ Give the program ~60 seconds to get all of your threads working. After about a m
 * 2 Threads: ~22 H/S **(Most Efficient)**
 * 4 Threads: ~22 H/S
 * 6 Threads: ~28 H/S **(Highest Speed)**
-
-[Zenpad 3S 10 Hashing Speeds](https://i.imgur.com/EH5pfg1.png)
-
-#### Nexus Player (Intel Atom Z3560, 4 Cores)
-* 1 Thread: ~9 H/S **(Most Efficient)**
-* 2 Threads: ~22 H/S
-* 4 Threads: ~28 H/S **(Highest Speed)**
 
 [Zenpad 3S 10 Hashing Speeds](https://i.imgur.com/EH5pfg1.png)
 
