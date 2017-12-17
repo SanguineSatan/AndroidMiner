@@ -16,13 +16,13 @@ apt install openssh --assume-yes
 apt install nano --assume-yes
 pkg install proot --assume-yes
 termuc-chroot
-nano /.ssh/authorized_keys
+nano ~/.ssh/authorized_keys
 ~~~
 
 Now type "ssh-rsa " and paste the public lines (as one long line) from the key you created. Save the file.
 
 ~~~
-chmod 600 /.ssh/authorized_keys.
+chmod 600 ~/.ssh/authorized_keys.
 sshd
 ~~~
 
