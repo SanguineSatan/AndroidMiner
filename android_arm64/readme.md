@@ -41,6 +41,7 @@ nano xmr.conf
 Edit "xmr.conf" to reflect your pool, thread count, and username.
 
 ~~~
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/miners/android_arm64/
 ./miner xmr.conf
 ~~~
 
