@@ -72,6 +72,15 @@ Give the program ~60 seconds to get all of your threads working. After about a m
 [Zenpad 3S 10 Hashing Speeds](https://i.imgur.com/EH5pfg1.png)
 
 # Compiling for yourself
+
+* Install Termux
+* Generate a key with Putty
+* Figure out how to save that key onto your Android Device so that it can be copied to the clipboard.
+
+Use this link to learn how to make a key pair to use
+https://www.getfilecloud.com/blog/ssh-without-password-using-putty/
+
+
 ## SSH'ing into your android device
 ~~~
 pkg update
@@ -81,7 +90,7 @@ pkg install nano --assume-yes
 nano ~/.ssh/authorized_keys
 ~~~
 
-Paste the Putty Public key
+Type "ssh-rsa ", paste the Putty public key from eariler.
 
 It should look something like this
 ~~~
