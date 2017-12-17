@@ -70,7 +70,7 @@ Give the program ~60 seconds to get all of your threads working. After about a m
 [Pixel 2 XL Hashing Speeds](https://i.imgur.com/KiRqLDw.png)
 
 #### Zenpad 3S 10 (MediaTek MT8176, 6 Cores)
-* 1 Thread: ~9 H/S 
+* 1 Thread: ~9 H/S
 * 2 Threads: ~22 H/S **(Most Efficient)**
 * 4 Threads: ~22 H/S
 * 6 Threads: ~28 H/S **(Highest Speed)**
@@ -83,3 +83,200 @@ Give the program ~60 seconds to get all of your threads working. After about a m
 * 4 Threads: ~28 H/S **(Highest Speed)**
 
 [Zenpad 3S 10 Hashing Speeds](https://i.imgur.com/EH5pfg1.png)
+
+# Compiling for yourself
+## SSH'ing into your android device
+~~~
+pkg update
+pkg upgrade --assume-yes
+pkg install openssh --assume-yes
+pkg install nano --assume-yes
+nano ~/.ssh/authorized_keys
+~~~
+
+Paste the Putty Public key
+
+It should look something like this
+~~~
+ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAhTGeebHIy3R02cCkiQ4eb6YUpTx9HHQDyZEZ4BORHpgN8eTmSm3OLgaaWTYmv7xiOhTXdeiswyfXYS3hdrBJH6H4ENClMkBvFYiP+a5hQl8GAiYif/V8N1yCJ6f2PIA+TIicNtSDjpltKyhqAnbkBmBTcYMuBj5D87g23sHWJul072VmkZVz/jnyfccHZjyAz2duUVPIS/Ll1fddrRA6RtmkTv0UHVHOaCZhT742AGjcPoP2KkBsQZWGNuAwkjb8Z5SA0pZUxwSiXgjBeIHd1+BFxu3RXZ9yVDLsrDHuY3dtMyqXkuyRlVa6CDY3GTZvyqc1upmjPxEUe3Ok195mDw==
+~~~
+
+* Press Volume Down + "x"
+* "y"
+* "enter"
+
+This will save the file
+
+~~~
+chmod 600 ~/.ssh/authorized_keys
+sshd
+~~~
+
+## Installing GCC
+Termux does not come with GCC, and we need it, so lets install it
+
+~~~
+pkg install proot --assume-yes
+termux-chroot
+apt-get install coreutils gnupg2 apt-transport-https wget --assume-yes
+mkdir $PREFIX/etc/apt/sources.list.d
+echo "deb [trusted=yes] https://its-pointless.github.io/files/ termux extras" > $PREFIX/etc/apt/sources.list.d/pointless.list
+wget https://its-pointless.github.io/pointless.gpg
+apt-key add pointless.gpg
+apt update
+apt install g++ --assume-yes
+apt update
+apt upgrade --assume-yes
+~~~
+
+Test this by typing
+~~~
+gcc-6
+~~~
+
+This should report
+
+~~~
+gcc-6: fatal error: no input files
+compilation terminated.
+~~~
+
+If it says something like
+~~~
+clang-5.0: fatal error: no input files
+compilation terminated.
+~~~
+Then this did not work. It needs to be "gcc" doing the work.
+
+## Installing Jansson
+
+~~~
+apt-get install automake
+pkg install autoconf --assume-yes
+git clone https://github.com/akheron/jansson.git
+cd jansson/
+autoreconf -i
+./configure
+make
+make install
+cp /usr/local/lib/libjansson.so.4  /usr/lib
+cd ../
+~~~
+
+## Getting OpenCL headers
+We do not need an OpenCl supported device, but we do need some headers so that the code can compile :)
+We will get these from the Kronos Group
+
+~~~
+git clone https://github.com/KhronosGroup/OpenCL-Headers.git
+~~~
+
+We will need these later in the build :)
+
+## Getting the code
+
+~~~
+pkg install git --assume-yes
+git clone https://github.com/hyc/wolf-xmr-miner.git
+cd wolf-xmr-miner/
+git checkout armv8
+~~~
+
+
+## Compiling the Code
+We are going to need to change a few settings in the makefile
+
+~~~
+nano M2
+#Change both the compiler and linker from 'gcc' to 'gcc-6'
+~~~
+
+Save the file and exit
+
+### Editing crypto/int-util.h
+I don't know why it was not included, but we need to go into this file and include the header for endian support
+
+In 'crypto/int-util.h', somewhere at the top of the file with the others, add
+~~~
+#include <endian.h>
+~~~
+
+### Editing net.c
+Again, don't know why but one of the necessary header files was not included
+
+At the top of 'net.c' add this line
+~~~
+#include <arpa/inet.h>
+~~~
+
+### Linking to the OpenCl headers
+We need to edit the make file, so run this:
+~~~
+nano M2
+~~~
+
+And we will need to add an argument to the CFLAGS line. We are going to tell GCC where
+to look for the OpenCL header files
+~~~
+-I ~/OpenCL-Headers/opencl22
+~~~
+
+This should be the directory that we installed the headers in a previous step
+
+### Linking to Jansson
+For some reason installing Jansson did not quite do the trick for me, so I had to
+point GCC to the compiled (prior step) binaries by hand.
+
+Still inside of the M2 make file, on the line that starts with `LIBS` remove `-ljansson` and replace it with
+~~~
+/usr/local/lib/libjansson.so
+~~~
+
+### Getting threading working
+So, for some reason, again I don't know why, the function `pthread_cancel` is not implemented
+on my system, so we will need to provide some function implementations.
+
+Someone else already did the heavy lifting here, so we will just use their code
+
+~~~
+cd ~/
+git clone https://github.com/tux-mind/libbthread.git
+cd libbthread/
+autoreconf -fi
+./configure
+make
+cp ~/libbthread/.libs/libbthread.so.0 /usr/lib/
+~~~
+
+Now we will need to edit our make file one more time
+~~~
+cd ~/wolf-xmr-miner/
+nano M2
+~~~
+
+On the same step where we linked to Jansson, eg, the one starting with `LIBS` we are going
+to add another library. Right before the text we instered add
+~~~
+/home/libbthread/.libs/libbthread.so
+~~~
+
+The whole line should look like this now:
+~~~
+LIBS    = /home/libbthread/.libs/libbthread.so /usr/local/lib/libjansson.so  # -lOpenCL -ldl
+~~~
+
+### Finally!
+~~~
+make -f M2
+~~~
+
+Now you can edit the `xmr.conf` file to match you number of threads and your pool Don't worry about work size or intensity, as this build does not use the GPU.
+
+~~~
+./miner xmr.conf
+~~~
+
+To run it!
+
+### Issues
+If you have any issues be sure to let me know! Send a screenshot and I will try to help :)
