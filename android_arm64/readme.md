@@ -41,6 +41,7 @@ nano xmr.conf
 Edit "xmr.conf" to reflect your pool, thread count, and username.
 
 ~~~
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/miners/android_arm64/
 ./miner xmr.conf
 ~~~
 
@@ -271,6 +272,7 @@ make -f M2
 Now you can edit the `xmr.conf` file to match you number of threads and your pool Don't worry about work size or intensity, as this build does not use the GPU.
 
 ~~~
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/miners/android_arm64/
 ./miner xmr.conf
 ~~~
 
