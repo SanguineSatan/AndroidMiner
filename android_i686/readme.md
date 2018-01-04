@@ -1,6 +1,6 @@
-# Android (ARM) #
-I have the binary setup and ready to go. This will only work on Android, 64 bit, ARM processors.
-If you have an Intel processor then there is another folder in this repository for that.
+# Android (Intel) #
+I have the binary setup and ready to go. This will only work on Android, 64 bit, Intel i686 processors.
+If you have an ARM processor then there is another folder in this repository for that.
 
 Download the app called Termux to be able to access a terminal on your device.
 ~~~
@@ -11,9 +11,9 @@ ROOT IS NOT NEEDED
 ~~~
 apt install git --assume-yes
 git clone https://github.com/NanoBytesInc/miners.git
-cd ~/miners/android_arm64/
+cd ~/miners/android_i686/
 # EDIT THE 'config.json" file to reflect your pool, thread count, and username (leave the others).
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/miners/android_arm64/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/miners/android_i686/
 ./miner config.json
 ~~~
 
@@ -22,25 +22,23 @@ This will start mining. I have set the binary to only display your hash rate onc
 ## Expected Hashrate
 Give the program ~60 seconds to get all of your threads working. After about a minute the reporting will be accurate on the console. (Before this you may get results "nanH/s"). Everything is working properly during this time, the logging is just a little finicky.
 
-#### Pixel 2XL (Snapdragon 835, 8 Cores)
-* 1 Thread: ~28 H/S **(Most Efficient)**
-* 2 Threads: ~22 H/S
-* 3 Threads: ~26 H/S
-* 4 Threads: ~30 H/S
-* 6 Threads: ~40 H/S
-* 8 Threads: ~44 H/S **(Highest Speed)**
+#### Nexus Player (Intel Atom Z3560, 4 Cores)
+* 1 Thread: ~6 H/S **(Most Efficient)**
+* 2 Threads: ~10 H/S
+* 3 Threads: ~13 H/S
+* 4 Threads: ~16 H/S **(Highest Speed)**
 
 [Pixel 2 XL Hashing Speeds](https://i.imgur.com/KiRqLDw.png)
 
-#### Zenpad 3S 10 (MediaTek MT8176, 6 Cores)
-* 1 Thread: ~9 H/S
-* 2 Threads: ~22 H/S **(Most Efficient)**
-* 4 Threads: ~22 H/S
-* 6 Threads: ~28 H/S **(Highest Speed)**
+#### Nextbook Ares 8 (Intel Atom Z3735F, 4 Cores)
+* 1 Thread: ~ H/S **(Most Efficient)**
+* 2 Threads: ~ H/S
+* 4 Threads: ~ H/S
+* 6 Threads: ~ H/S **(Highest Speed)**
 
 [Zenpad 3S 10 Hashing Speeds](https://i.imgur.com/EH5pfg1.png)
 
-# Pool I use
+## Pool I use
 I am currently mining Electronium right now as it is more profitable to mine with a low powered device than Monero is (at the time of writing).
 ~~~
 pool.etn.spacepools.org
@@ -49,7 +47,9 @@ For this pool you will need an Electronium wallet for the funds to be sent to.
 
 # Connecting to your Android Device via SSH
 Use this link to learn how to make a key pair to use
+~~~
 https://www.getfilecloud.com/blog/ssh-without-password-using-putty/
+~~~
 
 Mark down your device's IP address so you can connect to it with Putty.
 
@@ -276,6 +276,10 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/miners/android_arm64/
 ~~~
 
 To run it!
+
+~~~
+TODO: Update to reflect minor changes to make this work for i686 processors
+~~~
 
 ### Issues
 If you have any issues be sure to let me know! Send a screenshot and I will try to help :)
