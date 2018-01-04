@@ -11,10 +11,14 @@ pool.etn.spacepools.org
 ~~~
 For this pool you will need an Electronium wallet for the funds to be sent to.
 
+~~~
+This processor will timeout frequently if the difficulty is too high
+~~~
+
 # Expected Hashrate
 * 4 Threads: ~7 H/S
 
-[Raspberry Pi Hashing Speeds](https://imgur.com/hBVqxdb)
+[Raspberry Pi Hashing Speeds](https://imgur.com/9cvTLF5)
 
 ~~~
 If the unit gets too hot the hash rate will be diminished due to throttling

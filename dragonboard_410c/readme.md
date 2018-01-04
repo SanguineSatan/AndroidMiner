@@ -11,10 +11,14 @@ pool.etn.spacepools.org
 ~~~
 For this pool you will need an Electronium wallet for the funds to be sent to.
 
+~~~
+This processor will timeout frequently if the difficulty is too high
+~~~
+
 # Expected Hashrate
 * 4 Threads: ~13 H/S
 
-[DragonBoard 410 C Hashing Speeds](https://imgur.com/wBIEM0s)
+[DragonBoard 410 C Hashing Speeds](https://imgur.com/1JCvfRD)
 
 ~~~
 If the unit gets too hot the hash rate will be diminished due to throttling

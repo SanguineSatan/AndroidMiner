@@ -30,7 +30,7 @@ Give the program ~60 seconds to get all of your threads working. After about a m
 * 6 Threads: ~40 H/S
 * 8 Threads: ~44 H/S **(Highest Speed)**
 
-[Pixel 2 XL Hashing Speeds](https://i.imgur.com/KiRqLDw.png)
+[Pixel 2 XL Hashing Speeds](https://imgur.com/Xd9HNMi)
 
 #### Zenpad 3S 10 (MediaTek MT8176, 6 Cores)
 * 1 Thread: ~9 H/S
@@ -38,7 +38,7 @@ Give the program ~60 seconds to get all of your threads working. After about a m
 * 4 Threads: ~22 H/S
 * 6 Threads: ~28 H/S **(Highest Speed)**
 
-[Zenpad 3S 10 Hashing Speeds](https://i.imgur.com/EH5pfg1.png)
+[Zenpad 3S 10 Hashing Speeds](https://imgur.com/yPyFoFz)
 
 # Pool I use
 I am currently mining Electronium right now as it is more profitable to mine with a low powered device than Monero is (at the time of writing).

@@ -28,7 +28,7 @@ Give the program ~60 seconds to get all of your threads working. After about a m
 * 3 Threads: ~13 H/S
 * 4 Threads: ~16 H/S **(Highest Speed)**
 
-[Pixel 2 XL Hashing Speeds](https://i.imgur.com/KiRqLDw.png)
+[Nexus Player Hashing Speeds](https://imgur.com/Fagf1rB)
 
 #### Nextbook Ares 8 (Intel Atom Z3735F, 4 Cores)
 * 1 Thread: ~ H/S **(Most Efficient)**
@@ -36,7 +36,7 @@ Give the program ~60 seconds to get all of your threads working. After about a m
 * 4 Threads: ~ H/S
 * 6 Threads: ~ H/S **(Highest Speed)**
 
-[Zenpad 3S 10 Hashing Speeds](https://i.imgur.com/EH5pfg1.png)
+[Nextbook Ares 8 Hashing Speeds](https://i.imgur.com/EH5pfg1.png)
 
 ## Pool I use
 I am currently mining Electronium right now as it is more profitable to mine with a low powered device than Monero is (at the time of writing).
