@@ -1,0 +1,16 @@
+{
+	"Algorithms": [{
+		"name": "CryptoNight",
+		"devices": [ {
+			"index": -1,
+			"threads": 4,
+			"rawintensity": 16,
+			"worksize": 16
+		}],
+		"pools": [{
+			"url": "stratum+tcp://mine.luckypool.io:3333",
+			"user": "etnjzeGHJjyCABZWUhaZQp27iGT6xFjmQhRdkKR6PJvCU5wdxMQZiHPP3tUXNDrq56fkbvBTpGkcfWF3k62gBzey8cpg5gqizY",
+			"pass": "x86_number1:nanobytesinc@gmail.com"
+		}]
+	}]
+}
