@@ -1,16 +1,26 @@
 {
-	"Algorithms": [{
-		"name": "CryptoNight",
-		"devices": [ {
-			"index": -1,
-			"threads": 4,
-			"rawintensity": 16,
-			"worksize": 16
-		}],
-		"pools": [{
-			"url": "stratum+tcp://mine.luckypool.io:3333",
-			"user": "etnjzeGHJjyCABZWUhaZQp27iGT6xFjmQhRdkKR6PJvCU5wdxMQZiHPP3tUXNDrq56fkbvBTpGkcfWF3k62gBzey8cpg5gqizY",
-			"pass": "x86_number1:nanobytesinc@gmail.com"
-		}]
-	}]
+    "algo": "cryptonight",  // cryptonight (default) or cryptonight-lite
+    "av": 0,                // algorithm variation, 0 auto select
+    "background": false,    // true to run the miner in the background
+    "colors": true,         // false to disable colored output    
+    "cpu-affinity": "0xFF",   // set process affinity to CPU core(s), mask "0x3" for cores 0 and 1
+    "cpu-priority": 4,   // set process priority (0 idle, 2 normal to 5 highest)
+    "donate-level": 0,      // donate level, mininum 1%
+    "log-file": null,       // log all output to a file, example: "c:/some/path/xmrig.log"
+    "max-cpu-usage": 100,    // maximum CPU usage for automatic mode, usually limiting factor is CPU c
+    "print-time": 60,       // print hashrate report every N seconds
+    "retries": 5000,           // number of times to retry before switch to backup server
+    "retry-pause": 5,       // time to pause between retries
+    "safe": false,          // true to safe adjust threads and av settings for current CPU
+    "syslog": false,        // use system log for output messages
+    "threads": 4,        // number of miner threads
+    "pools": [
+        {
+            "url": "52.10.73.109:8080", // URL of mining server
+            "user": "LG Phone_1, 32 bit ",                        // username for mining server
+            "pass": "x",                       // password for mining server
+            "keepalive": true,                 // send keepalived for prevent timeout (need pool support)
+            "nicehash": false                  // enable nicehash/xmrig-proxy support
+        }
+    ]
 }
