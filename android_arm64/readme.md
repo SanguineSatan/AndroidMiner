@@ -1,6 +1,6 @@
-# Android (Intel i686) #
-I have the binary setup and ready to go. This will only work on Android, 64 bit, Intel processors.
-If you have an ARM 64 or 32 bit processor, then there is another folder in this repository for that. This only works on android 5+
+# Android (ARM x64) #
+I have the binary setup and ready to go. This will only work on Android, 64 bit, ARM processors.
+If you have an Intel processor, or an ARM 32 bit processor, then there is another folder in this repository for that. This only works on android 5+
 
 Download the app called **Termux** from the app store to be able to run the program.
 ~~~
@@ -18,7 +18,7 @@ git clone https://github.com/NanoBytesInc/miners.git
 
 ## Setting up your config file
 ~~~
-nano ~/miners/android_i686/config.json
+nano ~/miners/android_arm64/config.json
 ~~~
 
 This is where things get a little scary for anyone new to mining, so I will try to be as detailed
@@ -45,7 +45,7 @@ The file should be save at this point! You should be ready to mine!
 
 ## Running the miner
 ~~~
-~/miners/android_i686/xmrig
+~/miners/android_arm64/xmrig
 ~~~
 
 This will start mining.
@@ -75,17 +75,19 @@ If you have any issues report them to me, I want this to work for everyone!
 
 # Expected Hashrate
 
-#### Nexus Player (Intel Atom Z3560, 4 Cores)
-* 1 Thread: ~8 H/S **(Most Efficient)**
-* 2 Threads: ~15 H/S
-* 3 Threads: ~18 H/S
-* 4 Threads: ~20 H/S **(Highest Speed)**
+#### Pixel 2XL (Snapdragon 835, 8 Cores)
+* 1 Thread: ~28 H/S **(Most Efficient)**
+* 2 Threads: ~22 H/S
+* 3 Threads: ~26 H/S
+* 4 Threads: ~30 H/S
+* 6 Threads: ~40 H/S
+* 8 Threads: ~44 H/S **(Highest Speed)**
 
-#### Nextbook Ares 8 (Intel Atom Z3735F, 4 Cores)
-* 1 Thread: ~8 H/S **(Most Efficient)**
-* 2 Threads: ~14 H/S
-* 4 Threads: ~16 H/S
-* 6 Threads: ~19 H/S **(Highest Speed)**
+#### Zenpad 3S 10 (MediaTek MT8176, 6 Cores)
+* 1 Thread: ~9 H/S
+* 2 Threads: ~22 H/S **(Most Efficient)**
+* 4 Threads: ~22 H/S
+* 6 Threads: ~28 H/S **(Highest Speed)**
 
 # Closing the miner
 To close the miner, press `Volume Down + C`
