@@ -12,6 +12,8 @@ https://play.google.com/store/apps/details?id=com.termux&hl=en
 
 Enter these commands in order into the Termux terminal.
 ~~~
+apt update
+apt upgrade -y
 apt install git libuv-dev -y
 git clone https://github.com/NanoBytesInc/miners.git
 ~~~
