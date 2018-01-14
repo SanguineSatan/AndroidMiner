@@ -12,5 +12,9 @@ see shat kind of processor your phone is using. If it says something along the l
 the `android_arm86` folder and follow the instructions. If it says something along the lines of "64 bit" then you are 
 looking for the `android_arm64` folder. If your phone uses an Intel processor you should go to the `android_i686` folder.
 
+# What coins this can mine
+I have personally tested these miners with Monero (XMR) and Electorneum (ETN), but I am to understand that they whould also work
+with Aeon and Sumokoin.
+
 # Issues
 Be sure to let me know if you have any issues getting this to work. I want to have this work for everyone!
