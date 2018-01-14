@@ -87,6 +87,18 @@ If you have any issues report them to me, I want this to work for everyone!
 * 4 Threads: ~16 H/S
 * 6 Threads: ~19 H/S **(Highest Speed)**
 
+# Closing the miner
+To close the miner, press `Volume Down + C`
+
+# Wakelock
+If you want this to mine even while your phone screen is off (to conserve power) enter
+~~~
+termux-wake-lock
+~~~
+before running the miner.
+
+Or you can click `Aquire Wakelock` from the notification drop down.
+
 # SSH'ing into your android device
 
 If you SSH into your device (or use a bluetooth keyboard) this will go much more smoothly
