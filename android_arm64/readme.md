@@ -1,6 +1,6 @@
-# Android (ARM x86) #
-I have the binary setup and ready to go. This will only work on Android, 32 bit, ARM processors.
-If you have an Intel processor, or an ARM 64 bit processor, then there is another folder in this repository for that. This only works on android 5+
+# Android (ARM x64) #
+I have the binary setup and ready to go. This will only work on Android, 64 bit, ARM processors.
+If you have an Intel processor, or an ARM 32 bit processor, then there is another folder in this repository for that. This only works on android 5+
 
 Download the app called **Termux** from the app store to be able to run the program.
 ~~~
@@ -18,7 +18,7 @@ git clone https://github.com/NanoBytesInc/miners.git
 
 ## Setting up your config file
 ~~~
-nano ~/miners/android_arm86/config.json
+nano ~/miners/android_arm64/config.json
 ~~~
 
 This is where things get a little scary for anyone new to mining, so I will try to be as detailed
@@ -45,7 +45,7 @@ The file should be save at this point! You should be ready to mine!
 
 ## Running the miner
 ~~~
-~/miners/android_arm86/xmrig
+~/miners/android_arm64/xmrig
 ~~~
 
 This will start mining.
@@ -75,11 +75,19 @@ If you have any issues report them to me, I want this to work for everyone!
 
 # Expected Hashrate
 
-#### LG Us 550 (Snapdragon 410, 4 Cores)
-* 1 Thread: ~3.1 H/S **(Most Efficient)**
-* 2 Threads: ~5.8 H/S
-* 3 Threads: ~8.4 H/S
-* 4 Threads: ~30 H/S **(Highest Speed)**
+#### Pixel 2XL (Snapdragon 835, 8 Cores)
+* 1 Thread: ~28 H/S **(Most Efficient)**
+* 2 Threads: ~22 H/S
+* 3 Threads: ~26 H/S
+* 4 Threads: ~30 H/S
+* 6 Threads: ~40 H/S
+* 8 Threads: ~44 H/S **(Highest Speed)**
+
+#### Zenpad 3S 10 (MediaTek MT8176, 6 Cores)
+* 1 Thread: ~9 H/S
+* 2 Threads: ~22 H/S **(Most Efficient)**
+* 4 Threads: ~22 H/S
+* 6 Threads: ~28 H/S **(Highest Speed)**
 
 # SSH'ing into your android device
 
