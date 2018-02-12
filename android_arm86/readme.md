@@ -1,3 +1,22 @@
+# THIS PROJECT HAS EVOLVED INTO A FULL ANDROID APP
+I have used these binaries in a full android app, and have decided to focus my developemnt efforts there.
+
+[Pickaxe](https://github.com/NanoBytesInc/Pickaxe)
+
+Some off-the-cuff features of the app:
+
+* It has an OLED friendly mode
+* Allows you to enter you wallet from a QR code
+* The fastest mining on the market (by roughly %20 on high end phones)
+* Allows you to mine to your own pools
+* Can mine any CryptoNight coin, but has built in support for Monero, Electroneum, Aeon, Sumokoin, and Bytecoin (and soon to be MoneroV).
+* Saves your configurations so they do not need to constantly be re-entered
+* Highly stable (my 5 Android devices have been running for over a week, 24/7 without a problem)
+* Works with the screen off
+* Clean interface
+* Shows an estimated progress in the current share
+* You can un-tick the donation option
+
 # Android (ARM x86) #
 I have the binary setup and ready to go. This will only work on Android, 32 bit, ARM processors.
 If you have an Intel processor, or an ARM 64 bit processor, then there is another folder in this repository for that. This only works on android 5+
