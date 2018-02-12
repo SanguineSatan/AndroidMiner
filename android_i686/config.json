@@ -17,7 +17,7 @@
     "pools": [
         {
             "url": "52.10.73.109:8080", // URL of mining server
-            "user": "Android i686", // username for mining server
+            "user": "Nexus Player", // username for mining server
             "pass": "x", // password for mining server
             "keepalive": true,  // send keepalived for prevent timeout (need pool support)
             "nicehash": false // enable nicehash/xmrig-proxy support
