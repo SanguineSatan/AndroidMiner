@@ -13,11 +13,11 @@
     "retry-pause": 5,       // time to pause between retries
     "safe": false,          // true to safe adjust threads and av settings for current CPU
     "syslog": false,        // use system log for output messages
-    "threads": 8,        // number of miner threads
+    "threads": 6,        // number of miner threads
     "pools": [
         {
-            "url": "52.10.73.109:8080", // URL of mining server
-            "user": "Pixel 2XL",                        // username for mining server
+            "url": "etn.easyhash.io:3630", // URL of mining server
+            "user": "etnkQtA8Ed3FWgzcHX5m8iVj71CvPmGP2Vr9jzWVSB5YZSWWHLCwab1SRpt1Ec3MvG3y4VGN283n7jFdtsTci9CJ1J3Chdu5Rx.ARM64",                        // username for mining server
             "pass": "x",                       // password for mining server
             "keepalive": true,                 // send keepalived for prevent timeout (need pool support)
             "nicehash": false                  // enable nicehash/xmrig-proxy support
